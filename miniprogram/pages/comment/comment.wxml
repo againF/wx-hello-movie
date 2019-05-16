@@ -1,0 +1,50 @@
+<view class=''>
+    <view class='detail-container' style='background: url({{detail.images.large}}) no-repeat  top/cover'></view>
+    <view class='detail-mask'></view>
+    <view class='detail-info'>
+        <image src="{{detail.images.large}}" class='detail-img'></image>
+        <view class='detail'>
+            <view class='detail-nm'>{{detail.title}}</view>
+            <view>{{detail.original_title}}</view>
+            <view class='detail.sc'>{{detail.rating.average}}分</view>
+            <view>{{detail.countries[0]}}</view>
+            <view>导演：{{detail.directors[0].name}}</view>
+        </view>
+    </view>
+    <view class='desc'>{{detail.summary}}</view>
+    <!-- 评价 -->
+    <view class="padding20">
+        <view class="marign-bottom15 border">
+            <van-field value="{{ content }}" type="textarea" autosize placeholder="写一些评价吧" bind:change="onContentChange" />
+        </view>
+        <view class="marign-bottom15">
+            <van-rate value="{{ score }}" bind:change="onScoreChange" />
+        </view>
+        <van-button type="warning" bindtap="uploadImg">上传图片</van-button>
+        <view class="marign-bottom15" style='margin-top:15px;'>
+            <image class="comment-img" src="{{item}}" wx:for="{{images}}" wx:key="{{index}}"></image>
+        </view>
+        <view class="marign-bottom15">
+            <!-- <van-button size="large" type="danger" bindtap="submit">提交评价</van-button> -->
+            <button open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo" class="danger-btn">
+                评论
+            </button>
+        </view>
+    </view>
+    <!-- 评论展示 -->
+    <view class="padding20">
+        <view class='comment-wrap' wx:for="{{comments}}" wx:key="{{index}}">
+            <view class='comment-info-header'>
+                <text class='user-name'>{{item.userInfo.nickName || "匿名用户"}}</text>
+                <text class='score'>{{item.score}}星</text>
+                <text class='comment-date'>{{item.date}}</text>
+            </view>
+            <view class="marign-bottom15">
+                <image class="comment-img" src="{{item}}" wx:for="{{item.fileIDs}}" wx:key="{{index}}"></image>
+            </view>
+            <view class='comment-info-body'>
+                {{item.content}}
+            </view>
+        </view>
+    </view>
+</view>
