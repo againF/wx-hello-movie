@@ -1,0 +1,55 @@
+/* pages/order/order.wxss */
+#app {
+    padding: 15px;
+  }
+  .h1 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 24px;
+      margin-bottom: 15px;
+  }
+  .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  
+  .row {
+      display: flex;
+      align-items: center;
+      margin-bottom:15px;
+  }
+
+  
+  .col {
+     flex-basis: 25%;
+  }
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  .mi {
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      margin-right:15px;
+  }
+  
+  .add {
+    border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      margin-left: 15px;
+  }
+  .user-list {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 0;
+  }
+  .user-item {
+      display:flex;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-basis: 25%;
+  }
