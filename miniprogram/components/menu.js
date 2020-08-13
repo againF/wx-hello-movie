@@ -4,415 +4,44 @@ Component({
   behaviors: [computedBehavior],
   data: {
     userInfo: "",
-    customerList: [{
-            id: 0,
-            name: "小蕊",
-        },
-        {
-            id: 1,
-            name: "小英",
-        },
-        {
-            id: 2,
-            name: "Bella",
-        },
-        {
-            id: 3,
-            name: "iwen",
-        },
-        {
-            id: 4,
-            name: "温娴",
-        }, {
-            id: 5,
-            name: "金辉",
-        }, {
-            id: 6,
-            name: "姜姜",
-        }, {
-            id: 7,
-            name: "张琰",
-        },
-    ],
-    menu: [{
-            checked: false,
-            id: 0,
-            name: "玉米",
-            num: "1根",
-            cost: 3, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 1,
-            name: "胡萝卜",
-            num: "半根",
-            cost: 0.7, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 2,
-            name: "南瓜",
-            num: "3片",
-            cost: 0.6, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 3,
-            name: "豆腐",
-            num: "3片",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 4,
-            name: "荷兰豆",
-            num: "5片",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 5,
-            name: "木耳",
-            num: "3片",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 6,
-            name: "酸奶",
-            num: "1杯",
-            cost: 1.725, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 7,
-            name: "紫薯",
-            num: "1根",
-            cost: 3.5, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 8,
-            name: "西芹",
-            num: "1根",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        }, {
-          checked: false,
-            id: 9,
-            name: "西蓝花",
-            num: "3棵",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        }, {
-          checked: false,
-            id: 10,
-            name: "鸡胸肉",
-            num: "125克",
-            cost: 3.5, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 11,
-            name: "香菇",
-            num: "3片",
-            cost: 0.5, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 12,
-            name: "小番茄",
-            num: "3个",
-            cost: 0.5, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 13,
-            name: "洋葱",
-            num: "几片",
-            cost: 0.2, // 成本价
-            count: 1, // 份数
-        }, {
-          checked: false,
-            id: 14,
-            name: "生菜",
-            num: "3片",
-            cost: 0.5, // 成本价
-            count: 1, // 份数
-        }, {
-          checked: false,
-            id: 15,
-            name: "虾仁",
-            num: "5个",
-            cost: 3, // 成本价
-            count: 1, // 份数
-        }, {
-          checked: false,
-            id: 16,
-            name: "黄瓜",
-            num: "1/3根",
-            cost: 0.5, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 17,
-            name: "口蘑",
-            num: "3个",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 18,
-            name: "芦笋",
-            num: "3根",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 19,
-            name: "菠菜",
-            num: "3根",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        }, {
-          checked: false,
-            id: 20,
-            name: "秋葵",
-            num: "3根",
-            cost: 0.6, // 成本价
-            count: 1, // 份数
-        },
-        {
-          checked: false,
-            id: 21,
-            name: "鸡蛋",
-            num: "1个",
-            cost: 1, // 成本价
-            count: 1, // 份数
-        },
-    ],
+    menu: [],
     select: [], // 勾选结果
     selectAll: false,
     selectResult: "selectResult",
-    resetMenu: [{
-      checked: false,
-      id: 0,
-      name: "玉米",
-      num: "1根",
-      cost: 3, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 1,
-      name: "胡萝卜",
-      num: "半根",
-      cost: 0.7, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 2,
-      name: "南瓜",
-      num: "3片",
-      cost: 0.6, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 3,
-      name: "豆腐",
-      num: "3片",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 4,
-      name: "荷兰豆",
-      num: "5片",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 5,
-      name: "木耳",
-      num: "3片",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 6,
-      name: "酸奶",
-      num: "1杯",
-      cost: 1.725, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 7,
-      name: "紫薯",
-      num: "1根",
-      cost: 3.5, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 8,
-      name: "西芹",
-      num: "1根",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  }, {
-    checked: false,
-      id: 9,
-      name: "西蓝花",
-      num: "3棵",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  }, {
-    checked: false,
-      id: 10,
-      name: "鸡胸肉",
-      num: "125克",
-      cost: 3.5, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 11,
-      name: "香菇",
-      num: "3片",
-      cost: 0.5, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 12,
-      name: "小番茄",
-      num: "3个",
-      cost: 0.5, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 13,
-      name: "洋葱",
-      num: "几片",
-      cost: 0.2, // 成本价
-      count: 1, // 份数
-  }, {
-    checked: false,
-      id: 14,
-      name: "生菜",
-      num: "3片",
-      cost: 0.5, // 成本价
-      count: 1, // 份数
-  }, {
-    checked: false,
-      id: 15,
-      name: "虾仁",
-      num: "5个",
-      cost: 3, // 成本价
-      count: 1, // 份数
-  }, {
-    checked: false,
-      id: 16,
-      name: "黄瓜",
-      num: "1/3根",
-      cost: 0.5, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 17,
-      name: "口蘑",
-      num: "3个",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 18,
-      name: "芦笋",
-      num: "3根",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 19,
-      name: "菠菜",
-      num: "3根",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  }, {
-    checked: false,
-      id: 20,
-      name: "秋葵",
-      num: "3根",
-      cost: 0.6, // 成本价
-      count: 1, // 份数
-  },
-  {
-    checked: false,
-      id: 21,
-      name: "鸡蛋",
-      num: "1个",
-      cost: 1, // 成本价
-      count: 1, // 份数
-  },], // 初始菜单，重置用
+    resetMenu:[],
+    showGetUserInfoBtn: false
   },
   attached: function () {
-    // wx.getSetting({
-    //   success(res) {
-    //     console.log(res)
-    //     if (!res.authSetting['scope.userInfo']) {
-    //       wx.openSetting({
-    //         success (res) {
-    //           console.log(res.authSetting)
-    //           // res.authSetting = {
-    //           //   "scope.userInfo": true,
-    //           //   "scope.userLocation": true
-    //           // }
-    //           if(res.authSetting['scope.userInfo']) {
-    //             wx.getUserInfo({
-    //               success: function(res) {
-    //                 console.log(res.userInfo)
-    //               }
-    //             })
-    //           }
-    //         }
-    //       })
-    //       wx.authorize({
-    //         scope: 'scope.userInfo',
-    //         success () {
-    //           wx.getUserInfo({
-    //             success: function(res) {
-    //               console.log(res.userInfo)
-    //             }
-    //           })
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
+    const that = this;
+    wx.getSetting({
+      success(res) {
+        console.log(res)
+        if (!res.authSetting['scope.userInfo']) {
+          console.log("未设置用户")
+          that.setData({
+            showGetUserInfoBtn: true
+          })
+        }else {
+          wx.getUserInfo({
+            success: function (res) {
+              console.log(res.userInfo)
+              that.setData({
+                userInfo: res.userInfo
+              })
+              wx.showToast({
+                title: `欢迎${that.data.userInfo.nickName}`,
+                icon: 'success',
+                duration: 2000
+              })
+            }
+          })
+          that.setData({
+            showGetUserInfoBtn: false
+          })
+        }
+      }
+    })
+    this.getMenu();
    },
   computed: {
     cost: function (data) {
@@ -437,9 +66,37 @@ Component({
     }
   },
   methods: {
+    getMenu: function () {
+      wx.showLoading({
+        title: '加载中',
+      })
+      wx.cloud.callFunction({
+        name: 'getMenu',
+        data: {
+          
+        }
+      }).then(res => {
+        console.log("getMenu: ", res)
+        this.setData({
+          menu: JSON.parse(JSON.stringify(res.result.data)),
+          resetMenu: JSON.parse(JSON.stringify(res.result.data))
+        })
+        wx.hideLoading()
+      }).catch(err => {
+        console.error(err)
+        wx.hideLoading()
+      })
+    },
     onGotUserInfo(e) {
-      console.log(e)
-      /***
+      console.log("onGotUserInfo",e)
+      if (e.detail.errMsg === "getUserInfo:fail auth deny") {
+        wx.showToast({
+          title: "请设置用户名",
+          icon: 'success',
+          duration: 2000
+        })
+      }else {
+        /***
        * userInfo:
           avatarUrl: "https://wx.qlogo.cn/mmopen/vi_32/vLcy2OH8iaydKy7ruQ0tuxX2AmSfibuhmCHoHVPfqbticvWhxLXhTt6XfW2ksPw9CRo7BoaO3lGiaKjXjiaDhGZrYIQ/132"
           city: ""
@@ -449,18 +106,24 @@ Component({
           nickName: "Alan"
           province: ""
        * **/
-      const userInfo = e.detail.userInfo;
-      this.setData({
-        userInfo: userInfo
-      })
-      wx.showToast({
-        title: `欢迎${userInfo.nickName}`,
-        icon: 'success',
-        duration: 2000
-      })
+        const userInfo = e.detail.userInfo;
+        this.setData({
+          userInfo: userInfo
+        })
+        wx.showToast({
+          title: `欢迎${userInfo.nickName}`,
+          icon: 'success',
+          duration: 2000
+        })
+        this.setData({
+          showGetUserInfoBtn: false
+        })
+      }
+      
     },
     checkboxAllChange(e) {
-      console.log(e)
+      console.log('checkboxAllChange', e)
+      console.log("this.data: ", this.data)
       const values = e.detail.value
       if(values.length > 0) {
         // 全选
@@ -495,7 +158,7 @@ Component({
   
         for (let j = 0, lenJ = values.length; j < lenJ; ++j) {
           
-          if (items[i].id == values[j]) {
+          if (items[i]["_id"] == values[j]) {
             console.log("items[i]: ", items[i])
           console.log("values[j]: ", JSON.stringify(values[j]))
             items[i].checked = true
@@ -524,6 +187,14 @@ Component({
           })
         }
       })
+      this.submit();
+    },
+    submit() {
+      console.log("submit")
+      const data = {
+        user: this.data.userInfo,
+        select: this.data.select
+      }
     },
     mi(e) {
       console.log("min")
@@ -550,7 +221,7 @@ Component({
           })
           // Vue.set(this.menu, index, newItem)
           for (let i = 0; i < newSelect.length; i++) {
-              if (newSelect[i].id === item.id) {
+            if (newSelect[i]["_id"] === item["_id"]) {
                   // newSelect[i] = newItem
                   this.setData({
                     [`select[${i}].count`]: newCount
@@ -586,7 +257,7 @@ Component({
           })
           // Vue.set(this.menu, index, newItem)
           for (let i = 0; i < newSelect.length; i++) {
-              if (newSelect[i].id === item.id) {
+            if (newSelect[i]["_id"] === item["_id"]) {
                   // newSelect[i] = newItem
                   this.setData({
                     [`select[${i}].count`]: newCount

@@ -1,5 +1,5 @@
 <view class="app">
-<button  open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" type="warn">请先点我设置用户名</button>
+<button wx:if="{{showGetUserInfoBtn}}"  open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" type="warn">请先点我设置用户名</button>
   <view class="h1">
     <view>菜品</view>
     <view bindtap="reset">重置</view>
@@ -7,7 +7,7 @@
   <view class="list">
       <label class="row">
       <checkbox-group bindchange="checkboxAllChange">
-          <checkbox model:value="{{selectAll}}" model:checked="{{selectAll}}"></checkbox>
+          <checkbox value="{{selectAll}}" checked="{{selectAll}}"></checkbox>
       </checkbox-group>
           <view class="col">全选</view>
           <view class="col">成本价</view>
@@ -16,7 +16,7 @@
       </label>
       <checkbox-group bindchange="checkboxChange">
         <view class="row" wx:for="{{menu}}" wx:key="index">
-          <checkbox model:value="{{item.id}}" model:checked="{{item.checked}}"></checkbox>
+          <checkbox value="{{item['_id']}}" checked="{{item.checked}}"></checkbox>
             <view class="col">{{item.name}}</view>
             <view class="col">{{item.cost}}元</view>
             <view class="col">{{item.num}}</view>
@@ -31,5 +31,5 @@
         <view>
             {{selectResult}}
         </view>
-       <button type="primary" bindtap="copy">复制</button>
+       <button type="primary" bindtap="copy" class="mini-btn" size="mini">复制</button>
 </view>
