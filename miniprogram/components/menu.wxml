@@ -1,19 +1,32 @@
 <view class="app">
-<button wx:if="{{showGetUserInfoBtn}}"  open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" type="warn">请先点我设置用户名</button>
-  <view class="h1">
-    <view>菜品</view>
-    <view bindtap="reset">重置</view>
-  </view>
-  <view class="list">
-      <label class="row">
+  <view class="fix-header"></view>
+  <view class="fixed-header">
+    <button wx:if="{{showGetUserInfoBtn}}"  open-type="getUserInfo"  bindgetuserinfo="onGotUserInfo" type="warn">请先点我设置用户名</button>
+    <view class="h1">
+      <view>菜品</view>
+      <view bindtap="reset">重置</view>
+    </view>
+    <label class="row">
       <checkbox-group bindchange="checkboxAllChange">
           <checkbox value="{{selectAll}}" checked="{{selectAll}}"></checkbox>
       </checkbox-group>
+        <view class="col">全选</view>
+        <view class="col">成本价</view>
+        <view class="col">分量</view>
+        <view class="col">份数</view>
+    </label>
+  </view>
+  
+  <view class="list">
+      <!-- <label class="row">
+        <checkbox-group bindchange="checkboxAllChange">
+            <checkbox value="{{selectAll}}" checked="{{selectAll}}"></checkbox>
+        </checkbox-group>
           <view class="col">全选</view>
           <view class="col">成本价</view>
           <view class="col">分量</view>
           <view class="col">份数</view>
-      </label>
+      </label> -->
       <checkbox-group bindchange="checkboxChange">
         <view class="row" wx:for="{{menu}}" wx:key="index">
           <checkbox value="{{item['_id']}}" checked="{{item.checked}}"></checkbox>
@@ -27,9 +40,20 @@
         </view>
       </checkbox-group>
   </view>
-  <view>订单</view>
-        <view>
-            {{selectResult}}
-        </view>
-       <button type="primary" bindtap="copy" class="mini-btn" size="mini">复制</button>
+  <view class="fix-footer"></view>
+  <view id="footer" class="fixed-footer">
+    <view hidden="{{hideFooter}}">
+      <view>订单</view>
+      <view>
+          {{selectResult}}
+      </view>
+    </view>
+    
+    <view class="btn-group">
+      <button type="warn" bindtap="copy" class="mini-btn" size="mini">复制</button>
+      <button type="warn" bindtap="toggleFooter" class="mini-btn" size="mini">{{btnText}}</button>
+    </view>
+    
+  </view>
+  
 </view>

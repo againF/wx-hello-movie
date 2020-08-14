@@ -9,7 +9,9 @@ Component({
     selectAll: false,
     selectResult: "selectResult",
     resetMenu:[],
-    showGetUserInfoBtn: false
+    showGetUserInfoBtn: false,
+    btnText: "收起",
+    hideFooter: false,
   },
   attached: function () {
     const that = this;
@@ -60,12 +62,19 @@ Component({
           }
           return `${result} 成本总价：${data.cost} 实收：${data.cost + 5}`;
       }else {
-
         return ""
       }
     }
   },
   methods: {
+    toggleFooter: function() {
+      let hideFooter = !this.data.hideFooter;
+      let btnText = hideFooter ? "展开" : "收起";
+      this.setData({
+        hideFooter: hideFooter,
+        btnText: btnText
+      })
+    },
     getMenu: function () {
       wx.showLoading({
         title: '加载中',
